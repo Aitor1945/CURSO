@@ -7,4 +7,4 @@ for ($i = 1; $i <= $numero; $i++) {
     }
 }
 echo $contador;
-?>
+?>ghjhj

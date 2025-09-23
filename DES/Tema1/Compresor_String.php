@@ -24,5 +24,5 @@ function compresorString($cadena) {
 
 // Ejemplo de uso
 $cadena = "a";
-echo compresorString($cadena); // Salida: a2b3c4
+echo compresorString($cadena);
 ?>

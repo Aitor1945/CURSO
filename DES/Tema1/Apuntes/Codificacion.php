@@ -4,7 +4,7 @@ $abecedario = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","
 strlen($texto);
 $texto = strtolower($texto);
 for ($i = 0; $i < strlen($texto); $i++) {
-    for ($j = 0; $j < count($abecedario); $j++) {
+    for ($j = 0; $j < count($abecedario) -1 ; $j++) {
         if ($texto[$i] == $abecedario[$j]) {
            $texto[$i] = $abecedario[$j+2];
            break;
@@ -19,7 +19,7 @@ function decodificarTexto($texto) {
     strlen($texto);
     $texto = strtolower($texto);
     for ($i = 0; $i < strlen($texto); $i++) {
-        for ($j = 0; $j < count($abecedario); $j++) {
+        for ($j = 0; $j < count($abecedario) +1 ; $j++) {
             if ($texto[$i] == $abecedario[$j]) {
                $texto[$i] = $abecedario[$j-2];
                break;
@@ -30,7 +30,7 @@ function decodificarTexto($texto) {
 
 }
 
-$texto = "Aitor";
+$texto = "Aitoz";
 echo codificarTexto($texto) . "\n";
 $texto = codificarTexto($texto);
 echo decodificarTexto($texto);

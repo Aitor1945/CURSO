@@ -19,6 +19,15 @@
             echo "<li>$fruta</li>";
         }
         echo "</ol>";
+    $productos = [ ["nombre" => "Camiseta", "precio" => 19.99,],
+      ["nombre"=> "LG", "precio"=> 200.00],
+      ["nombre"=> "PC", "precio"=> 599.99],
+      ["nombre"=> "Tablet", "precio"=> 149.99],
+    ] ;
+
+    foreach ($productos as $producto) {
+        echo $producto["nombre"] . " - " . $producto["precio"] . " €<br>";
+    }
      ?>
 
 </body>

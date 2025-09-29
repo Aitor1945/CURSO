@@ -53,7 +53,7 @@ $promedio = 0;
 foreach ($edades as $edad) {
     $suma += $edad;
 }
-echo "Suma de edades: " . $suma . "<br>";
+echo "Suma de edades: " . $suma . "\n";
 $promedio = $suma / count($edades);
 echo "Promedio de edades: " . $promedio;
 

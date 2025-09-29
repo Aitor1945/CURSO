@@ -24,9 +24,10 @@
       ["nombre"=> "PC", "precio"=> 599.99],
       ["nombre"=> "Tablet", "precio"=> 149.99],
     ] ;
-
+        echo "<table border='1'>";
+        echo "<th>Nombre</th>" . "<th>Precio</th>";
     foreach ($productos as $producto) {
-        echo $producto["nombre"] . " - " . $producto["precio"] . " €<br>";
+        echo "<tr>" . "<td>" . $producto["nombre"] . "</td>" . "<td>" . $producto["precio"] . "€</td>" . "</tr>";
     }
      ?>
 

@@ -48,4 +48,16 @@ $resultado = guapo($numero);
 echo "La suma de los digitos de $numero es $resultado." . "\n";
 
 
+function contador($n): void {
+    if ($n == 1) {
+        echo "1";
+    } else {
+        echo $n . ", ";
+        contador($n - 1);
+    }
+    }
+
+$numero = 7;
+contador($numero);
+
 ?>

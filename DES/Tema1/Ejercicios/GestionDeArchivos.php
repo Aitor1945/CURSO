@@ -1,5 +1,5 @@
 <?php
-$archivo = fopen("archivo.txt" ,"w");
+$archivo = fopen("archivo.txt" ,"a+");
 function matrizes($n) {
     $texto = "";
 

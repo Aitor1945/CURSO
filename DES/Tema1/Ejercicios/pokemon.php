@@ -12,8 +12,6 @@
 <div class="caja"> 
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/376.gif" height="auto" width="50%">
 
-</div>
-
 <?php
 $cadena = file_get_contents("https://pokeapi.co/api/v2/pokemon/metagross");
 $data = json_decode($cadena, true);
@@ -29,5 +27,7 @@ if ($valor > 131) {
 
 }
 ?>
+
+</div>
 </body>
 </html>

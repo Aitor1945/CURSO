@@ -16,6 +16,13 @@
         <input type="text" id="apodo" name="apodo" placeholder="Tu apodo">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required placeholder="email@example.com">
+
+
+
+        <label for="codpostal">Codigo Postal:</label>
+        <input type="text"  id="number" name="numero" pattern="[0-9]{5}">
+
+
         <input type="checkbox" id="acepto" name="acepto" required>
         <label for="acepto">Acepto términos y condiciones</label>
         <p>Género:</p>

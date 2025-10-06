@@ -38,7 +38,7 @@ function contarPorEstado($array, $estado) {
 function contarPorNombre($array, $cadena) {
     $contador = 0;
     foreach ($array as $p) {
-        if (preg_match("/$cadena/", $p["name"])) {
+        if (preg_match("/$cadena/i", $p["name"])) {
             $contador++;
         }
     }

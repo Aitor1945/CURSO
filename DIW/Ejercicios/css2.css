@@ -1,0 +1,91 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 40px;
+    text-align: center;
+}
+
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, button {
+    display: block;
+    margin-top: 5px;
+    padding: 8px;
+    width: 250px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+}
+
+/* Pseudoclases */
+
+/* enabled / disabled */
+input:enabled {
+    border-color: green;
+}
+
+input:disabled {
+    border-color: rgb(255, 0, 212);
+    background-color: #eee;
+}
+
+/* focus */
+input:focus {
+    outline: 2px solid rgb(0, 0, 0);
+}
+
+/* valid / invalid */
+input:valid {
+    border-color: green;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+/* required / optional */
+input:required {
+    background-color: #fffbe6;
+}
+
+input:optional {
+    background-color: #6d9689;
+}
+
+/* checked */
+input:checked + label {
+    color: green;
+    font-weight: bold;
+}
+
+
+/* botón */
+button {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+p:not(.hola) {
+    color : red;
+}

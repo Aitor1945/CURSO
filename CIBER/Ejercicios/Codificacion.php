@@ -68,7 +68,7 @@ for ($i=0; $i<strlen($mensaje); $i++) {
 
 echo "Mensaje cifrado: ".$mensaje_cifrado . "\n";
 //2
-$abecedario = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+$abecedario = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," "];
 $desplazamiento = 3;
 $mensaje = "FRZD";
 $mensaje = strtolower($mensaje); 

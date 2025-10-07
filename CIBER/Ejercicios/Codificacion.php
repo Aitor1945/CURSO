@@ -101,5 +101,28 @@ Cifrado por trasposicion de ATAQUEJESUSIANOCIFRADO
 
    */
 
+function dividirtexto($texto, $columnas) {
+    $filas = [];
+    $longuitud = strlen($texto);
+
+for ($i = 0; $i < $longuitud; $i += $columnas) {
+    $filas[] = substr($texto, $i, $columnas);
+}
+return $filas;
+}
+$texto = "AtaquejesusianoCifrado";
+$columnas = 4;
+$filasTexto = dividirTexto($texto, $columnas);
+$textoCifrado = "";
+for ($c = 0; $c < $columnas; $c++){
+    foreach($filasTexto as $fila) {
+        if ($c < strlen($fila)) {
+            $textoCifrado .= $fila[$c];
+        }
+    }
+}
+
+echo "Texto original: $texto\n";
+echo "Texto cifrado: $textoCifrado\n";
 
 ?>

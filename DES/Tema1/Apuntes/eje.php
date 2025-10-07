@@ -35,22 +35,19 @@ for ($i = 0; $i < $longuitud; $i++) {
 }
 print_r($tablero);
 //--- IGNORE ---
-// 2) Contar vecinos vivos (sin envoltura)
-function contar_vecinos($tab, $fila, $col, $num_filas, $num_cols) {
+// 2) Contar vecinos vivos 
+function contar_vecinos($tab, $fila, $col, $n) {
     $cont = 0;
     for ($di = -1; $di <= 1; $di++) {
         for ($dj = -1; $dj <= 1; $dj++) {
             if ($di === 0 && $dj === 0) {
-                continue; // Saltar la celda actual
+                continue;
             }
             $ni = $fila + $di;
             $nj = $col + $dj;
-
-            // Validar que los índices están dentro de los límites
-            if ($ni >= 0 && $ni < $num_filas && $nj >= 0 && $nj < $num_cols) {
-                if ($tab[$ni][$nj] === 1) {
-                    $cont++;
-                }
+            // Verificar que la celda vecina existe
+            if (isset($tab[$ni][$nj]) && $tab[$ni][$nj] === 1) {
+                $cont++;
             }
         }
     }
@@ -108,4 +105,9 @@ for ($t = 1; $t <= $turnos; $t++) {
         $tablero = siguiente_turno($tablero, $longuitud);
     }
 }
+
+$archivo = fopen("juego_de_la_vida.txt", "w");
+
+
+// Crear un archivo con todo y cambiar Turno por Generación
 ?>

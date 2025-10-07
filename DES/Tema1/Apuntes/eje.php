@@ -20,6 +20,7 @@ Segundo ver los vecinos y aplicar las reglas
 tercero repetir el proceso las veces que queramos por ejemplo 5 veces
 Cuarto mostrar el tablero en cada turno
 */
+$archivo = fopen("juego_de_la_vida.txt", "w");
 
 $longuitud = 5;   // tamaño del tablero (n x n)
 $turnos = 5;      // mostrar tablero inicial + 4 generaciones
@@ -87,27 +88,25 @@ function siguiente_turno($tab, $n) {
 }
 
 // 4) Imprimir tablero (usando "\n")
-function imprimir_tablero($tab, $n) {
+function imprimir_tablero($tab, $n, $archivo) {
     for ($i = 0; $i < $n; $i++) {
         for ($j = 0; $j < $n; $j++) {
-            echo $tab[$i][$j] . " ";
+            fwrite ($archivo,$tab[$i][$j] . " " );
         }
-        echo "\n";
+        fwrite ($archivo, "\n");
     }
 }
 
 // Ciclo principal: mostrar 5 tableros
 for ($t = 1; $t <= $turnos; $t++) {
-    echo "Turno " . $t . "\n";
-    imprimir_tablero($tablero, $longuitud);
-    echo "\n";
+    fwrite ($archivo,"Generacion " . $t . "\n");
+    imprimir_tablero($tablero, $longuitud, $archivo);
+    fwrite ($archivo, "\n");
     if ($t < $turnos) {
         $tablero = siguiente_turno($tablero, $longuitud);
     }
 }
-
-$archivo = fopen("juego_de_la_vida.txt", "w");
-
+fclose ($archivo);
 
 // Crear un archivo con todo y cambiar Turno por Generación
 ?>

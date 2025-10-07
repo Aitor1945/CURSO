@@ -42,6 +42,20 @@ function estaAprobado($alumno, $notas) {
     return true;
 }
 
+function mejorAlumno($notas) {
+    $mejor = "";
+    $maxMedia = 0;
+    foreach ($notas as $alumno => $notasAlumno) {
+        $media = calcularMedia($notasAlumno, $notas);
+        if ($media > $maxMedia) {
+            $maxMedia = $media;
+            $mejor = $alumno;
+        }
+    }
+    return $mejor;
+}
+
+/*
 $a = $argv[1];
 $b = $argv[2];
 if ($a == "Media") {
@@ -51,4 +65,15 @@ echo "Nota Máxima de $a: " . notaMaxima($b, $notas) . "\n";
 }if ($a == "Aprobado") {
 echo "$b está aprobado: " . (estaAprobado($b, $notas) ? "Sí" : "No") . "\n";
 }
+*/
+
+foreach ($notas as $alumno => $notasAlumno) {
+    echo "Alumno: " . $alumno . "\n";
+    echo "Media: " . calcularMedia($notasAlumno, $notas) . "\n";
+    echo "Nota Máxima: " . notaMaxima($alumno, $notas) . "\n";
+    echo "Aprobado: " . (estaAprobado($alumno, $notas) ? "Sí" : "No") . "\n";
+    echo "-----------------------\n";
+}
+echo "Mejor alumno: " . mejorAlumno($notas) . "\n";
+
 ?>

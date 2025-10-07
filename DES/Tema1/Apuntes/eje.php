@@ -1,4 +1,26 @@
 <?php
+/*
+Juego de la vida
+Conceptos:
+-tablero--> matriz
+-celula viva o muerta--> 1 o 0
+-Turnos
+Reglas:
+1. Soledad: Una celula viva con menos de dos vecinas vivas muere
+2. Equilibrio: Una celula viva con dos o tres vecinas vivas sigue viva
+3. Sobrepoblacion: Una celula viva con mas de tres vecinas vivas muere
+4. Reproduccion: Una celula muerta con exactamente tres vecinas vivas nace
+0010     0000     0000
+0101     0010     0000
+0000 --> 0000 --> 0000
+0000     0000     0000
+
+Primero crear el tablero los 0 y 1 van random es de nxn por ejemplo 5x5
+Segundo ver los vecinos y aplicar las reglas
+tercero repetir el proceso las veces que queramos por ejemplo 5 veces
+Cuarto mostrar el tablero en cada turno
+*/
+
 $longuitud = 5;   // tamaño del tablero (n x n)
 $turnos = 5;      // mostrar tablero inicial + 4 generaciones
 $tablero = [];    // array vacío (sintaxis corta)
@@ -14,20 +36,20 @@ for ($i = 0; $i < $longuitud; $i++) {
 print_r($tablero);
 //--- IGNORE ---
 // 2) Contar vecinos vivos (sin envoltura)
-function contar_vecinos($tab, $fila, $col, $n) {
+function contar_vecinos($tab, $fila, $col, $num_filas, $num_cols) {
     $cont = 0;
     for ($di = -1; $di <= 1; $di++) {
         for ($dj = -1; $dj <= 1; $dj++) {
-            // Si di=0 y dj=0 estamos en la misma celda saltar
             if ($di === 0 && $dj === 0) {
-                continue;
+                continue; // Saltar la celda actual
             }
             $ni = $fila + $di;
             $nj = $col + $dj;
-            // Comprobar que la posición vecina está dentro del tablero
-            if ($ni >= 0 && $ni < $n && $nj >= 0 && $nj < $n) {
+
+            // Validar que los índices están dentro de los límites
+            if ($ni >= 0 && $ni < $num_filas && $nj >= 0 && $nj < $num_cols) {
                 if ($tab[$ni][$nj] === 1) {
-                    $cont = $cont + 1;
+                    $cont++;
                 }
             }
         }

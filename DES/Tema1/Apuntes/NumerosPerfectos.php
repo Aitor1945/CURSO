@@ -62,32 +62,4 @@ function triangulo($simbolo = '*', $fila = 1) {
 echo triangulo();
 
 
-
-/*
-Juego de la vida
-Conceptos:
--tablero--> matriz
--celula viva o muerta--> 1 o 0
--Turnos
-Reglas:
-1. Soledad: Una celula viva con menos de dos vecinas vivas muere
-2. Equilibrio: Una celula viva con dos o tres vecinas vivas sigue viva
-3. Sobrepoblacion: Una celula viva con mas de tres vecinas vivas muere
-4. Reproduccion: Una celula muerta con exactamente tres vecinas vivas nace
-0010     0000     0000
-0101     0010     0000
-0000 --> 0000 --> 0000
-0000     0000     0000
-
-Primero crear el tablero los 0 y 1 van random es de nxn por ejemplo 5x5
-Segundo ver los vecinos y aplicar las reglas
-tercero repetir el proceso las veces que queramos por ejemplo 5 veces
-Cuarto mostrar el tablero en cada turno
-*/
-echo "\nJuego de la vida\n";
-$n = 5; // Tablero de 5x5
-$turns = 5; // Número de iteraciones
-
-
-
 ?>

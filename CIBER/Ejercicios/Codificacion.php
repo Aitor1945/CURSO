@@ -88,6 +88,29 @@ for ($i=0; $i<strlen($mensaje); $i++) {
 echo "Mensaje descifrado: ".$mensaje_cifrado . "\n";
 //3
 
+$cipher = "OLSSVDVYSK";
+$alphabets = [
+    'SIN_ESPACIO' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    'CON_ESPACIO' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ '
+];
+
+echo $cipher;
+
+foreach ($alphabets as $modo => $abc) {
+    $n = strlen($abc);
+    echo "\n--- $modo ---\n";
+    for ($d = 0; $d < $n; $d++) {
+        $out = '';
+        for ($i = 0; $i < strlen($cipher); $i++) {
+            $c = $cipher[$i];
+            $p = strpos($abc, $c);
+            if ($p !== false) $out .= $abc[($p - $d + $n) % $n];
+            else $out .= $c;
+        }
+        echo "Intento $d: $out\n";
+    }
+}
+
 
 /*Cifrado por sustitucion 
 1) A-Z B-Y y asi cifrar palabra Seguiridad
@@ -95,7 +118,13 @@ echo "Mensaje descifrado: ".$mensaje_cifrado . "\n";
    ADIOSADIOSADIOSA se le suma la posicion del de abajo
    HRT-------------
 Descifrar RIJVSUYVJN la clave es (KEY) modulo 26
+*/
 
+
+
+
+
+/*
 Cifrado por trasposicion de ATAQUEJESUSIANOCIFRADO
 
 
